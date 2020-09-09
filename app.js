@@ -1320,4 +1320,309 @@ spinWords( "This is another test" )=> returns "This is rehtona test"*/
 // }
 // foo(3);
 
-Дан массив с числами. Найдите сумму первых N элементов до первого нуля. Пример: [1, 2, 3, 0, 4, 5, 6] - суммируем первые 3 элемента, так как дальше стоит элемент с числом 0.
+// Дан массив с числами. Найдите сумму первых N элементов до первого нуля.
+// Пример: [1, 2, 3, 0, 4, 5, 6] - суммируем первые 3 элемента, так как дальше стоит элемент с числом 0.
+
+// const array = [1, 2, 3, 0, 4, 5, 6];
+
+// const sum = function (arr) {
+//   let acc = 0;
+//   for (let i = 0; i < arr.length; i += 1) {
+//     if (arr[i] !== 0) {
+//       acc += arr[i];
+//     }
+//     if (arr[i] === 0) {
+//       break;
+//     }
+//   }
+//   return acc;
+// };
+// console.log(sum(array));
+
+// var arr = [1, 2, 3, 0, 4, 5, 6];
+// var answer = 0;
+// var result = arr.reduce(function (sum, elem) {
+//   if (elem == 0) {
+//     answer = sum;
+//   } else {
+//     return sum + elem;
+//   }
+// });
+// if (answer == undefined) {
+//   answer = result;
+// }
+// alert(answer);
+
+// Дан массив с числами. Узнайте сколько элементов с начала массива надо сложить, чтобы в сумме получилось больше 10-ти.
+// const array = [1, 2, 3, 0, 4, 5, 6];
+// let num = 1;
+// const sumOfItems = array.reduce((acc, item) => {
+//   if (acc > 10) {
+//     return num;
+//   } else {
+//     num += 1;
+//     return acc + item;
+//   }
+// });
+// console.log(sumOfItems);
+
+// Дан массив с числами. Узнайте сколько элементов с конца массива надо сложить, чтобы в сумме получилось больше 10-ти.
+// const array = [1, 2, 3, 0, 4, 5, 6];
+// let num = 1;
+// const sumOfItems = array.reduceRight(function (acc, item) {
+//   if (acc > 10) {
+//     console.log(num);
+//     return;
+//   } else {
+//     num += 1;
+//     return acc + item;
+//   }
+// });
+
+// Дан массив с числами. Оставьте в нем только положительные числа. Затем извлеките квадратный корень и этих чисел.
+// const array = [4, 25, -3, 0, -4, 144, 36];
+// const finalResult = array.filter(item => item > 0).map(item => Math.sqrt(item));
+// console.log(finalResult);
+
+// const array = [8, 2, 3, 0, 4, 5, 6];
+// let num = 1;
+// const sum = array.reduce((acc, item) => {
+//   if (acc > 10) {
+//     return console.log(num);
+//   } else {
+//     num += 1;
+//     return (acc += item);
+//   }
+// });
+
+// Complete the square sum function so that it squares each number passed into it and then sums the results together.
+
+// For example, for [1, 2, 2] it should return 9 because 1^2 + 2^2 + 2^2 = 9.
+// Test.assertEquals(squareSum([1,2]), 5)
+// Test.assertEquals(squareSum([0, 3, 4, 5]), 50)
+
+// const array = [1, 2, 5];
+// const squareSum = [...array]
+//   .map(item => Math.pow(item, 2))
+//   .reduce((acc, item) => acc + item);
+// console.log(squareSum);
+
+// function squareSum(numbers) {
+//   return numbers.reduce((acc, curr) => acc + curr * curr, 0);
+// }
+
+// We need a function that can transform a number into a string.
+// What ways of achieving this do you know?
+
+// function numberToString(num) {
+//   return num.toString();
+// }
+// console.log(numberToString(123));
+
+// let num = 123;
+// console.log(typeof num.toString());
+
+// function boolToWord(bool) {
+//   return bool === true ? 'yes' : 'no';
+// }
+
+// console.log(boolToWord(false));
+
+// Jaden Casing Strings
+// let str = 'my mommy cutу';
+
+// // console.log(
+// //   str
+// //     .split(' ')
+// //     .map(item => item[0].toUpperCase() + item.slice(1))
+// //     .join(' '),
+// // );
+
+// String.prototype.toJadenCase = function () {
+//   return this.split(' ')
+//     .map(item => item[0].toUpperCase() + item.slice(1))
+//     .join(' ');
+// };
+
+// console.log(str.toJadenCase());
+
+// const arr = ['a', 'b'];
+// for (const [index, element] of arr.entries()) {
+//   console.log(index, element);
+// }
+// // Output:
+// // 0 a
+// // 1 b
+// You can use destructuring to split an Array:
+
+// const [first, ...rest] = ['a', 'b', 'c'];
+//     // first = 'a'; rest = ['b', 'c']
+
+// Array.prototype.split() returns an Array. Therefore, destructuring is useful if you are interested in the elements, not the Array:
+
+// const cells = 'Jane\tDoe\tCTO'
+// const [firstName, lastName, title] = cells.split('\t');
+// console.log(firstName, lastName, title);
+
+// function arrayDiff(a, b) {
+//   let newArray = a.concat(b);
+//   // let newArray = [...a, ...b];
+//   const filteredArray = newArray.filter(
+//     (item, index, array) => array.indexOf(item) === index,
+//   );
+//   return console.log(filteredArray);
+// }
+
+// arrayDiff([1, 2, 2, 3], [2]);
+
+// function arrayDiff(a, b) {
+//   let c = [];
+//   for (let i = 0; i < a.length; i += 1) {
+//     for (let j = 0; j < b.length; j += 1) {
+//       if (a[i] !== b[j]) {
+//         c.push(a[i]);
+//       }
+//     }
+//   }
+//   return console.log(c);
+// }
+
+// arrayDiff([1, 2, 2, 4, 2, 3, 2, 5, 2], [2]);
+
+//1// function arrayDiff(a, b) {
+//   return console.log(a.filter(item => !b.includes(item)));
+// }
+
+// arrayDiff([1, 2, 2, 4, 2, 3, 2, 5, 2], [2, 5]);
+
+//2// function arrayDiff(arr1, arr2){
+//   return arr1
+//     .filter(x => !arr2.includes(x))
+//     .concat(arr2.filter(x => !arr1.includes(x)));
+// }
+// Edit: Explanation
+// This Code is first filteringthe first Array, to remove all items that are in the second.
+//  Then the first Array is put together with the second Array, which is filtered to remove all Elements that are already in the first Array.
+
+//3// function array_diff(a, b) {
+//   console.log((b = new Set(b)));
+//   return console.log(a.filter(v => !b.has(v)));
+// }
+// array_diff([1, 2, 2, 4, 2, 3, 2, 5, 2], [2, 2, 5]);
+
+//4//
+// function array_diff(a, b) {
+//   return a.filter(function (x) {
+//     return b.indexOf(x) == -1;
+//   });
+// }
+
+// function array_diff(a, b) {
+//   return a.filter(x => b.indexOf(x) === -1);
+// }
+// console.log(array_diff([1, 2, 2, 4, 2, 3, 2, 5, 2], [2, 2, 5]));
+
+// likes [] -- must be "no one likes this"
+// likes ["Peter"] -- must be "Peter likes this"
+// likes ["Jacob", "Alex"] -- must be "Jacob and Alex like this"
+// likes ["Max", "John", "Mark"] -- must be "Max, John and Mark like this"
+// likes ["Alex", "Jacob", "Mark", "Max"] -- must be "Alex, Jacob and 2 others like this"
+
+//1//
+// function likes(names) {
+//   if (names.length === 0) {
+//     return 'no one likes this';
+//   } else if (names.length === 1) {
+//     return `${names[0]} likes this`;
+//   } else if (names.length === 2) {
+//     return `${names[0]} and ${names[1]} like this`;
+//   } else if (names.length === 3) {
+//     return `${names[0]}, ${names[1]} and ${names[2]} like this`;
+//   } else if (names.length >= 4) {
+//     return `${names[0]}, ${names[1]} and ${names.length - 2} others like this`;
+//   }
+// }
+
+//2//
+// function likes(names) {
+//   names = names || [];
+//   switch (names.length) {
+//     case 0:
+//       return 'no one likes this';
+//       break;
+//     case 1:
+//       return `${names[0]} likes this`;
+//       break;
+//     case 2:
+//       return `${names[0]} and ${names[1]} like this`;
+//       break;
+//     case 3:
+//       return `${names[0]}, ${names[1]} and ${names[2]} like this`;
+//       break;
+//     case 4:
+//       return `${names[0]}, ${names[1]} and ${
+//         names.length - 2
+//       } others like this`;
+//       break;
+//   }
+// }
+
+// console.log(likes(['Peter', 'Max', 'kolya']));
+
+// Регулярка:
+// console.log('a+x ax aax aaax'.replace(/a\+x/g, '!'));
+
+// Дана строка 'ahb acb aeb aeeb adcb axeb'. Напишите регулярку,
+// которая найдет строки ahb, acb, aeb по шаблону: буква 'a', любой символ, буква 'b'.
+// console.log('ahb acb aeb aeeb adcb axeb'.replace(/a.b/g, '!'));
+
+// Дана строка 'aba aca aea abba adca abea'. Напишите регулярку, которая найдет
+// строки abba adca abea по шаблону: буква 'a', 2 любых символа, буква 'a'.
+// console.log('aba aca aea abba adca abea'.replace(/a..a/g, '!'));
+
+// Дана строка 'aba aca aea abba adca abea'. Напишите регулярку,
+//которая найдет строки abba и abea, не захватив adca.
+// console.log('aba aca aea abba adca abea'.replace(/ab.a/g, '!'));
+
+// Дана строка 'aa aba abba abbba abca abea'. Напишите регулярку, которая найдет
+// строки aba, abba, abbba по шаблону: буква 'a', буква 'b' любое количество раз, буква 'a'. Показать решение.
+// console.log('aa aba abba abbba abca abea'.replace(/ab+a/g, '!'));
+
+// Дана строка 'aa aba abba abbba abca abea'. Напишите регулярку, которая
+// найдет строки aa, aba, abba, abbba по шаблону: буква 'a', буква 'b' любое
+//  количество раз (в том числе ниодного раза), буква 'a'.
+// console.log('aa aba abba abbba abca abea'.replace(/ab*a/g, '!'));
+
+// Дана строка 'aa aba abba abbba abca abea'. Напишите регулярку, которая найдет строки aa,
+// aba по шаблону: буква 'a', буква 'b' один раз или ниодного, буква 'a'.
+// console.log('aa aba abba abbba abca abea'.replace(/ab?a/g, '!'));
+
+//Дана строка 'aa aba abba abbba abca abea'. Напишите регулярку,
+//которая найдет строки aa, aba, abba, abbba, не захватив abca abea.
+// console.log('aa aba abba abbba abca abea'.replace(/ab*a/g, '!'));
+
+// Дана строка 'ab abab abab abababab abea'. Напишите регулярку, которая
+// найдет строки по шаблону: строка 'ab' повторяется 1 или более раз.
+// console.log('ab abab abab abababab abea'.replace(/(ab)+/g, '!'));
+
+//Дана строка 'a.a aba aea'. Напишите регулярку, которая найдет строку a.a, не захватив остальные.
+// console.log('a.a aba aea'.replace(/a\.a/g, '!'));
+
+//Дана строка '2+3 223 2223'. Напишите регулярку, которая найдет строку 2+3, не захватив остальные.
+// console.log('2+3 223 2223'.replace(/2\+3/g, '!'));
+
+// Дана строка '23 2+3 2++3 2+++3 345 567'. Напишите регулярку, которая найдет строки 2+3,
+// 2++3, 2+++3, не захватив остальные (+ может быть любое количество).
+// console.log('23 2+3 2++3 2+++3 345 567'.replace(/2\++3/g, '!'));
+
+// Дана строка '23 2+3 2++3 2+++3 445 677'. Напишите регулярку, которая найдет
+//  строки 23, 2+3, 2++3, 2+++3, не захватив остальные.
+// console.log('23 2+3 2++3 2+++3 445 677'.replace(/2\+*3/g, '!'));
+
+// Дана строка '*+ *q+ *qq+ *qqq+ *qqq qqq+'. Напишите регулярку, которая
+// найдет строки *q+, *qq+, *qqq+, не захватив остальные.
+// console.log('*+ *q+ *qq+ *qqq+ *qqq qqq+'.replace(/\*q+\+/g, '!'));
+
+// Дана строка 'aba accca azzza wwwwa'. Напишите регулярку, которая найдет
+//  все строки по краям которых стоят буквы 'a', и заменит каждую из них на
+//   '!'. Между буквами a может быть любой символ (кроме a).
