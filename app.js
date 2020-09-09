@@ -1320,4 +1320,14 @@ spinWords( "This is another test" )=> returns "This is rehtona test"*/
 // }
 // foo(3);
 
-Дан массив с числами. Найдите сумму первых N элементов до первого нуля. Пример: [1, 2, 3, 0, 4, 5, 6] - суммируем первые 3 элемента, так как дальше стоит элемент с числом 0.
+// Дан массив с числами. Найдите сумму первых N элементов до первого нуля. Пример: [1, 2, 3, 0, 4, 5, 6] - суммируем первые 3 элемента, так как дальше стоит элемент с числом 0.
+
+const HigherLevelFunction = function(places) {
+    return function(number) {
+     return Number(number.toFixed(places));
+    }
+} 
+
+const rounder2 = HigherLevelFunction(2);
+
+console.log(rounder2(4.888888));
