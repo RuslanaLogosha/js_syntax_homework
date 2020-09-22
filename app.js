@@ -1628,12 +1628,126 @@ spinWords( "This is another test" )=> returns "This is rehtona test"*/
 //   '!'. Между буквами a может быть любой символ (кроме a).
 // Дан массив с числами. Найдите сумму первых N элементов до первого нуля. Пример: [1, 2, 3, 0, 4, 5, 6] - суммируем первые 3 элемента, так как дальше стоит элемент с числом 0.
 
-const HigherLevelFunction = function (places) {
-  return function (number) {
-    return Number(number.toFixed(places));
-  };
+// const HigherLevelFunction = function (places) {
+//   return function (number) {
+//     return Number(number.toFixed(places));
+//   };
+// };
+
+// const rounder2 = HigherLevelFunction(2);
+
+// console.log(rounder2(4.888888));
+
+// const actions = document.querySelectorAll('.js-actions button');
+// console.log(actions[2].dataset.action);
+
+// const navEl = document.querySelector('.site-nav');
+// console.log(navEl.classList);
+// navEl.classList.add('magic-class');
+// navEl.classList.replace('magic-class', 'gogog');
+
+// const currentPageUrl = '/portfolio';
+// const linkEl = document.querySelector(
+//   `.site-nav__link[href='${currentPageUrl}']`,
+// );
+// console.log(linkEl);
+// linkEl.classList.add('site-nav__link--current');
+
+// const navEl = document.querySelector('.site-nav');
+// const firstNavItem = navEl.firstElementChild;
+// console.log(navEl);
+// console.log(navEl.children[2]);
+// console.log(navEl.firstElementChild);
+// console.log(navEl.previousElementSibling);
+
+// const titleEl = document.createElement('h2');
+// titleEl.classList.add('move');
+// titleEl.textContent = 'real slim shady';
+// console.log(titleEl);
+
+// document.body.insertBefore(titleEl, navEl);
+
+const colorPickerOptions = [
+  { label: 'red', color: '#F44336' },
+  { label: 'green', color: '#4CAF50' },
+  { label: 'blue', color: '#2196F3' },
+  { label: 'grey', color: '#607D8B' },
+  { label: 'pink', color: '#E91E63' },
+  { label: 'indigo', color: '#3F51B5' },
+];
+
+// const option = colorPickerOptions[0];
+// console.log(option);
+// const buttonEl = document.createElement('button');
+// buttonEl.type = 'button';
+// buttonEl.textContent = option.label;
+// buttonEl.style.backgroundColor = option.color;
+
+// console.log(buttonEl);
+const colorPickerContainerEl = document.querySelector('.js-color-picker');
+
+// const elements = [];
+// for (let i = 0; i < colorPickerOptions.length; i += 1) {
+//   const option = colorPickerOptions[i];
+//   const buttonEl = document.createElement('button');
+//   buttonEl.type = 'button';
+//   buttonEl.classList.add('color-picker__option');
+//   buttonEl.textContent = option.label;
+//   buttonEl.style.backgroundColor = option.color;
+//   elements.push(buttonEl);
+// }
+
+// const elements = colorPickerOptions.map(option => {
+//   const buttonEl = document.createElement('button');
+//   buttonEl.type = 'button';
+//   buttonEl.classList.add('color-picker__option');
+//   buttonEl.textContent = option.label;
+//   buttonEl.style.backgroundColor = option.color;
+//   return buttonEl;
+// });
+
+// console.log(elements);
+// colorPickerContainerEl.append(...elements);
+
+// const makeColorPickerOptions = options => {
+//   return options.map(option => {
+//     const buttonEl = document.createElement('button');
+//     buttonEl.type = 'button';
+//     buttonEl.classList.add('color-picker__option');
+//     buttonEl.textContent = option.label;
+//     buttonEl.style.backgroundColor = option.color;
+//     return buttonEl;
+//   });
+// };
+
+// const elements = makeColorPickerOptions(colorPickerOptions);
+// colorPickerContainerEl.append(...elements);
+
+import products from '/data/products.js';
+console.log(products);
+
+const makeProductCard = ({ name, description, price }) => {
+  const productEl = document.createElement('article');
+  productEl.classList.add('product');
+
+  const nameEl = document.createElement('h2');
+  nameEl.textContent = name;
+  nameEl.classList.add('product__name');
+
+  const descrEl = document.createElement('p');
+  descrEl.textContent = description;
+  descrEl.classList.add('product__descr');
+
+  const priceEl = document.createElement('p');
+  priceEl.textContent = `Цена: ${price} кредитов`;
+  priceEl.classList.add('product__price');
+
+  productEl.append(nameEl, descrEl, priceEl);
+  return productEl;
 };
+console.log(makeProductCard(products[1]));
 
-const rounder2 = HigherLevelFunction(2);
-
-console.log(rounder2(4.888888));
+const elements = products.map(makeProductCard);
+console.log(elements);
+const productsContainerEl = document.querySelector('.js-products');
+productsContainerEl.append(...elements);
