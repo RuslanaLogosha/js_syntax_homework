@@ -1667,14 +1667,14 @@ spinWords( "This is another test" )=> returns "This is rehtona test"*/
 
 // document.body.insertBefore(titleEl, navEl);
 
-const colorPickerOptions = [
-  { label: 'red', color: '#F44336' },
-  { label: 'green', color: '#4CAF50' },
-  { label: 'blue', color: '#2196F3' },
-  { label: 'grey', color: '#607D8B' },
-  { label: 'pink', color: '#E91E63' },
-  { label: 'indigo', color: '#3F51B5' },
-];
+// const colorPickerOptions = [
+//   { label: 'red', color: '#F44336' },
+//   { label: 'green', color: '#4CAF50' },
+//   { label: 'blue', color: '#2196F3' },
+//   { label: 'grey', color: '#607D8B' },
+//   { label: 'pink', color: '#E91E63' },
+//   { label: 'indigo', color: '#3F51B5' },
+// ];
 
 // const option = colorPickerOptions[0];
 // console.log(option);
@@ -1684,7 +1684,7 @@ const colorPickerOptions = [
 // buttonEl.style.backgroundColor = option.color;
 
 // console.log(buttonEl);
-const colorPickerContainerEl = document.querySelector('.js-color-picker');
+// const colorPickerContainerEl = document.querySelector('.js-color-picker');
 
 // const elements = [];
 // for (let i = 0; i < colorPickerOptions.length; i += 1) {
@@ -1723,31 +1723,33 @@ const colorPickerContainerEl = document.querySelector('.js-color-picker');
 // const elements = makeColorPickerOptions(colorPickerOptions);
 // colorPickerContainerEl.append(...elements);
 
-import products from '/data/products.js';
-console.log(products);
+// import products from '/data/products.js';
+// console.log(products);
 
-const makeProductCard = ({ name, description, price }) => {
-  const productEl = document.createElement('article');
-  productEl.classList.add('product');
+// const makeProductCard = ({ name, description, price }) => {
+//   const productEl = document.createElement('article');
+//   productEl.classList.add('product');
 
-  const nameEl = document.createElement('h2');
-  nameEl.textContent = name;
-  nameEl.classList.add('product__name');
+//   const nameEl = document.createElement('h2');
+//   nameEl.textContent = name;
+//   nameEl.classList.add('product__name');
 
-  const descrEl = document.createElement('p');
-  descrEl.textContent = description;
-  descrEl.classList.add('product__descr');
+//   const descrEl = document.createElement('p');
+//   descrEl.textContent = description;
+//   descrEl.classList.add('product__descr');
 
-  const priceEl = document.createElement('p');
-  priceEl.textContent = `Цена: ${price} кредитов`;
-  priceEl.classList.add('product__price');
+//   const priceEl = document.createElement('p');
+//   priceEl.textContent = `Цена: ${price} кредитов`;
+//   priceEl.classList.add('product__price');
 
-  productEl.append(nameEl, descrEl, priceEl);
-  return productEl;
-};
-console.log(makeProductCard(products[1]));
+//   productEl.append(nameEl, descrEl, priceEl);
+//   return productEl;
+// };
+// console.log(makeProductCard(products[1]));
 
-const elements = products.map(makeProductCard);
-console.log(elements);
-const productsContainerEl = document.querySelector('.js-products');
-productsContainerEl.append(...elements);
+// const elements = products.map(makeProductCard);
+// console.log(elements);
+// const productsContainerEl = document.querySelector('.js-products');
+// productsContainerEl.append(...elements);
+
+console.log('hi there');
